@@ -1,0 +1,176 @@
+import { Technology, Project, ServiceItem, SocialLink } from '../types';
+
+export const technologies: Technology[] = [
+  { id: 'flutter', name: 'Flutter', logo: '/assets/images/technology/flutter.png', category: 'mobile' },
+  { id: 'dart', name: 'Dart', logo: '/assets/images/technology/Dart.png', category: 'mobile' },
+  { id: 'python', name: 'Python', logo: '/assets/images/technology/python.png', category: 'backend' },
+  { id: 'javascript', name: 'JavaScript', logo: '/assets/images/technology/javascript.png', category: 'web' },
+  { id: 'php', name: 'PHP', logo: '/assets/images/technology/php.png', category: 'backend' },
+  { id: 'flask', name: 'Flask', logo: '/assets/images/technology/flask.png', category: 'backend' },
+  { id: 'firebase', name: 'Firebase', logo: '/assets/images/technology/firebase.png', category: 'backend' },
+  { id: 'razorpay', name: 'RazorPay', logo: '/assets/images/technology/razorpay.png', category: 'tools' },
+  { id: 'cpp', name: 'C++', logo: '/assets/images/technology/c++.png', category: 'backend' },
+  { id: 'swift', name: 'Swift', logo: '/assets/images/technology/swift.png', category: 'mobile' },
+  { id: 'scenekit', name: 'SceneKit', logo: '/assets/images/technology/scenekit.jpeg', category: 'mobile' },
+  { id: 'wp', name: 'WordPress', logo: '/assets/images/technology/WP.png', category: 'web' },
+  { id: 'scrum', name: 'Scrum', logo: '/assets/images/technology/scrum.png', category: 'tools' },
+  { id: 'restapi', name: 'REST API', logo: '/assets/images/technology/restAPI.png', category: 'backend' },
+  { id: 'networkplus', name: 'Network+', logo: '/assets/images/technology/networkPlus.png', category: 'other' },
+  { id: 'networkadmin', name: 'Network Admin', logo: '/assets/images/technology/networkAdmin.png', category: 'other' },
+  { id: 'html', name: 'HTML5', logo: '/assets/images/technology/html.png', category: 'web' },
+  { id: 'css', name: 'CSS3', logo: '/assets/images/technology/css.png', category: 'web' },
+  { id: 'git', name: 'Git', logo: '/assets/images/technology/git.png', category: 'tools' },
+  { id: 'figma', name: 'Figma', logo: '/assets/images/technology/figma.png', category: 'tools' },
+];
+
+export const techMap = new Map<string, Technology>(
+  technologies.map(t => [t.id, t])
+);
+
+export const projects: Project[] = [
+  {
+    id: 'easy_qr_code',
+    typeKey: 'type_flutter_package',
+    category: 'package',
+    titleKey: 'project.title_easy_qr_code',
+    descriptionKey: 'project.description_easy_qr_code',
+    appPhotos: '/assets/images/projects/1.png',
+    projectLink: 'https://github.com/alighelejbeigi/easy_qr_code',
+    techUsed: [techMap.get('dart')!, techMap.get('flutter')!, techMap.get('figma')!, techMap.get('git')!],
+    buttonTextKey: 'project.github_link_button',
+  },
+  {
+    id: 'easy_mssql_windows',
+    typeKey: 'type_flutter_package',
+    category: 'package',
+    titleKey: 'project.title_easy_mssql_windows',
+    descriptionKey: 'project.description_easy_mssql_windows',
+    appPhotos: '/assets/images/projects/2.png',
+    projectLink: 'https://github.com/alighelejbeigi/easy_mssql_windows',
+    techUsed: [techMap.get('dart')!, techMap.get('flutter')!, techMap.get('figma')!, techMap.get('git')!],
+    buttonTextKey: 'project.github_link_button',
+  },
+  {
+    id: 'qr_hub',
+    typeKey: 'type_flutter',
+    category: 'app',
+    titleKey: 'project.title_qr_hub',
+    descriptionKey: 'project.description_qr_hub',
+    appPhotos: '/assets/images/projects/8.png',
+    projectLink: 'https://github.com/alighelejbeigi/qr_hub',
+    techUsed: [techMap.get('dart')!, techMap.get('flutter')!, techMap.get('figma')!, techMap.get('git')!],
+    buttonTextKey: 'project.github_link_button',
+  },
+  {
+    id: 'flower_shop',
+    typeKey: 'type_flutter',
+    category: 'app',
+    titleKey: 'project.title_flower',
+    descriptionKey: 'project.description_flower',
+    appPhotos: '/assets/images/projects/6.png',
+    projectLink: 'https://github.com/alighelejbeigi/flower_app',
+    techUsed: [techMap.get('dart')!, techMap.get('flutter')!, techMap.get('figma')!, techMap.get('restapi')!, techMap.get('git')!],
+    buttonTextKey: 'project.github_link_button',
+  },
+  {
+    id: 'todo_bloc',
+    typeKey: 'type_flutter',
+    category: 'app',
+    titleKey: 'project.title_todo',
+    descriptionKey: 'project.description_todo',
+    appPhotos: '/assets/images/projects/7.png',
+    projectLink: 'https://github.com/alighelejbeigi/todo_app_with_hive_and_bloc',
+    techUsed: [techMap.get('dart')!, techMap.get('flutter')!, techMap.get('git')!],
+    buttonTextKey: 'project.github_link_button',
+  },
+  {
+    id: 'crypto_tracker',
+    typeKey: 'type_flutter',
+    category: 'app',
+    titleKey: 'project.title_crypto',
+    descriptionKey: 'project.description_crypto',
+    appPhotos: '/assets/images/projects/5.png',
+    projectLink: 'https://github.com/alighelejbeigi/crypto_currency_tracker',
+    techUsed: [techMap.get('dart')!, techMap.get('flutter')!, techMap.get('figma')!, techMap.get('restapi')!, techMap.get('git')!],
+    buttonTextKey: 'project.explore_more_button',
+  },
+  {
+    id: 'ai_chat',
+    typeKey: 'type_flutter',
+    category: 'app',
+    titleKey: 'project.title_ai',
+    descriptionKey: 'project.description_ai',
+    appPhotos: '/assets/images/projects/3.png',
+    projectLink: 'https://github.com/alighelejbeigi/ai_chat',
+    techUsed: [techMap.get('dart')!, techMap.get('flutter')!, techMap.get('git')!, techMap.get('restapi')!],
+    buttonTextKey: 'project.explore_more_button',
+  },
+  {
+    id: 'math_solver',
+    typeKey: 'type_flutter',
+    category: 'app',
+    titleKey: 'project.title_math_solver',
+    descriptionKey: 'project.description_math_solver',
+    appPhotos: '/assets/images/projects/4.png',
+    projectLink: 'https://github.com/alighelejbeigi/math_solver',
+    techUsed: [techMap.get('dart')!, techMap.get('flutter')!, techMap.get('git')!, techMap.get('restapi')!],
+    buttonTextKey: 'project.explore_more_button',
+  },
+  {
+    id: 'bus_reservation',
+    typeKey: 'type_dart',
+    category: 'dart',
+    titleKey: 'project.title_bus',
+    descriptionKey: 'project.description_bus',
+    appPhotos: '/assets/images/projects/dart.png',
+    projectLink: 'https://github.com/alighelejbeigi/bus_app_oop_2',
+    techUsed: [techMap.get('git')!, techMap.get('dart')!],
+    buttonTextKey: 'project.github_link_button',
+  },
+];
+
+export const services: ServiceItem[] = [
+  { id: 'mobile', title: 'Mobile App Development', icon: 'Smartphone', color: '#4ade80' },
+  { id: 'web', title: 'Web Development', icon: 'Globe', color: '#facc15' },
+  { id: 'uiux', title: 'UI - UX Design', icon: 'Layout', color: '#60a5fa' },
+  { id: 'opensource', title: 'Github Open Source', icon: 'Code2', color: '#fb923c' },
+];
+
+export const socialLinks: SocialLink[] = [
+  {
+    name: 'Email',
+    url: 'mailto:ghelejbeigiali@gmail.com',
+    iconLight: '/assets/images/social/email.png',
+    iconDark: '/assets/images/social/email-dark.png',
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/alighelejbeigi/',
+    iconLight: '/assets/images/social/linkedin-logo.png',
+    iconDark: '/assets/images/social/linkedin-logo-dark.png',
+  },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/ali_beigi_95/',
+    iconLight: '/assets/images/social/instagram.png',
+    iconDark: '/assets/images/social/instagram-dark.png',
+  },
+  {
+    name: 'GitHub',
+    url: 'https://github.com/alighelejbeigi/',
+    iconLight: '/assets/images/social/github.png',
+    iconDark: '/assets/images/social/github-dark.png',
+  },
+  {
+    name: 'Medium',
+    url: 'https://medium.com/@alighelejbeigi',
+    iconLight: '/assets/images/social/medium.png',
+    iconDark: '/assets/images/social/medium-dark.png',
+  },
+];
+
+export const statsData = [
+  { value: '10+', labelKey: 'stats.projects' },
+  { value: '2+', labelKey: 'stats.year_experience_flutter' },
+  { value: '5+', labelKey: 'stats.year_experience_it' },
+];
