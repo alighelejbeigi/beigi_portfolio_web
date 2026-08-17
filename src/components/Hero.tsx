@@ -114,7 +114,7 @@ export const Hero: React.FC<HeroProps> = ({ language, darkMode, onOpenContact })
                   className="w-full h-full max-h-80 object-contain drop-shadow-xl"
                   onError={(e) => {
                     // Fallback to person.svg or placeholder icon
-                    (e.target as HTMLImageElement).src = '/assets/svg/person.svg';
+                    (e.target as HTMLImageElement).src = './assets/svg/person.svg';
                   }}
                 />
               </div>
