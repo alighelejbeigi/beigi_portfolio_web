@@ -1,37 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import { Language, Project } from './types';
-import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Services } from './components/Services';
-import { Portfolio } from './components/Portfolio';
-import { Stats } from './components/Stats';
-import { Footer } from './components/Footer';
-import { ProjectModal } from './components/ProjectModal';
-import { ContactModal } from './components/ContactModal';
+"use client";
+import React, { useState, useEffect } from "react";
+import { Language, Project } from "./types";
+import { Header } from "./components/Header";
+import { Hero } from "./components/Hero";
+import { About } from "./components/About";
+import { Services } from "./components/Services";
+import { Portfolio } from "./components/Portfolio";
+import { Stats } from "./components/Stats";
+import { Footer } from "./components/Footer";
+import { ProjectModal } from "./components/ProjectModal";
+import { ContactModal } from "./components/ContactModal";
 
 export function App() {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>("en");
   const [darkMode, setDarkMode] = useState<boolean>(true);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [contactModalOpen, setContactModalOpen] = useState<boolean>(false);
-  const [activeSection, setActiveSection] = useState<string>('home');
+  const [activeSection, setActiveSection] = useState<string>("home");
 
   // Handle document language & text direction for RTL/LTR support
   useEffect(() => {
     document.documentElement.lang = language;
-    document.documentElement.dir = language === 'fa' ? 'rtl' : 'ltr';
-    if (language === 'fa') {
-      document.body.classList.add('fa-font');
+    document.documentElement.dir = language === "fa" ? "rtl" : "ltr";
+    if (language === "fa") {
+      document.body.classList.add("fa-font");
     } else {
-      document.body.classList.remove('fa-font');
+      document.body.classList.remove("fa-font");
     }
   }, [language]);
 
   // Handle scroll section detection
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'services', 'portfolio', 'contact'];
+      const sections = ["home", "about", "services", "portfolio", "contact"];
       const scrollPosition = window.scrollY + 150;
 
       for (const section of sections) {
@@ -47,14 +48,14 @@ export function App() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <div
       className={`min-h-screen transition-colors duration-300 ${
-        darkMode ? 'bg-[#07111a] text-slate-100' : 'bg-slate-50 text-slate-800'
+        darkMode ? "bg-[#07111a] text-slate-100" : "bg-slate-50 text-slate-800"
       }`}
     >
       {/* Sticky Top Navbar */}

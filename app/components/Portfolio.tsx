@@ -1,3 +1,5 @@
+
+"use client";
 import React, { useState } from 'react';
 import { ExternalLink, Github, Layers, Sparkles } from 'lucide-react';
 import { Language, Project } from '../types';
