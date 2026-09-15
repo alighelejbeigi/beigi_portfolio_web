@@ -1,8 +1,10 @@
 import { MetadataRoute } from 'next'
 import { projects } from '../app/data/portfolioData'
 
+export const dynamic = "force-static"; // <--- IN KHAT RO EZAFE KON
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://alighelejbeigi.github.io'; // Domainet ro bezar
+  const baseUrl = 'https://alighelejbeigi.ir'; 
 
   const projectUrls = projects.map((project) => ({
     url: `${baseUrl}/projects/${project.id}`,
