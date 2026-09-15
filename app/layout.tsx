@@ -10,6 +10,7 @@ export const viewport: Viewport = {
 
 // SEO Metadata asli
 export const metadata: Metadata = {
+  metadataBase: new URL("https://alighelejbeigi.ir"),
   title: {
     default: "Ali Ghelej Beigi | Mobile & Web Developer",
     template: "%s | Ali Ghelej Beigi", // in tuye page haye dige estefade mishe
