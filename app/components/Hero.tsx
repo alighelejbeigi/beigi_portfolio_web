@@ -99,7 +99,7 @@ export const Hero: React.FC<HeroProps> = ({ language, darkMode, onOpenContact })
             </div>
           </div>
 
-          {/* SVG Illustration Column */}
+          {/* Profile Photo */}
           <div className="lg:col-span-5 flex justify-center items-center">
             <div className="relative w-full max-w-md aspect-square flex items-center justify-center">
               <div
@@ -110,17 +110,14 @@ export const Hero: React.FC<HeroProps> = ({ language, darkMode, onOpenContact })
                 }`}
               />
 
-              <div className="relative z-10 p-6 w-full h-full flex items-center justify-center">
+              <div className="relative z-10 w-[88%] h-[88%] overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
                 <Image
-                  src="/assets/svg/guy.svg"
-                  alt="Developer Illustration"
+                  src="/assets/images/person.png"
+                  alt="Ali Ghelej Beigi, Flutter and web developer in Shiraz"
                   fill
                   loading="eager"
-                  sizes="(max-width: 768px) 100vw, 320px"
-                  className="w-full h-full max-h-80 object-contain drop-shadow-xl"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = '/assets/svg/person.svg';
-                  }}
+                  sizes="(max-width: 768px) 88vw, 384px"
+                  className="object-cover object-[center_35%]"
                 />
               </div>
             </div>

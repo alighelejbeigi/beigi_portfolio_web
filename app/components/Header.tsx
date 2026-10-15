@@ -81,8 +81,8 @@ export const Header: React.FC<HeaderProps> = ({
           className="flex items-center gap-3 group text-left cursor-pointer"
         >
           <Image
-            src="/assets/images/logo.png"
-            alt="Ali Ghelej Beigi Logo"
+            src="/favicon.png"
+            alt="AGB developer portfolio logo"
             width={40}
             height={40}
             className="w-10 h-10 object-contain transition-transform group-hover:scale-105"

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="background" x1="48" y1="36" x2="464" y2="488" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101F2B"/>
+      <stop offset="1" stop-color="#07111A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="210" y1="174" x2="320" y2="306" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#54DDD0"/>
+      <stop offset="1" stop-color="#20B2AA"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="480" height="480" rx="132" fill="url(#background)"/>
+  <rect x="17.5" y="17.5" width="477" height="477" rx="130.5" stroke="#20B2AA" stroke-opacity=".5" stroke-width="3"/>
+  <path d="M91 137V111h27M421 137V111h-27M91 375v26h27M421 375v26h-27" stroke="#20B2AA" stroke-opacity=".65" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="256" y="291" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="158" font-weight="700" letter-spacing="-12">
+    <tspan fill="#F8FAFC">A</tspan><tspan fill="url(#accent)">G</tspan><tspan fill="#F8FAFC">B</tspan>
+  </text>
+  <text x="256" y="365" text-anchor="middle" fill="#8DA3AE" font-family="SFMono-Regular, Consolas, monospace" font-size="39" font-weight="600" letter-spacing="7">&lt;/&gt;</text>
+  <path d="M190 394h132" stroke="url(#accent)" stroke-linecap="round" stroke-width="7"/>
+</svg>

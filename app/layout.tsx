@@ -34,6 +34,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Ali Ghelej Beigi" }],
   creator: "Ali Ghelej Beigi",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
