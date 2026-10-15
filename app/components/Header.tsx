@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Sun, Moon, Menu, X, Globe, MessageSquare } from "lucide-react";
+import Image from "next/image";
+import { Sun, Moon, Menu, X, Globe } from "lucide-react";
 import { Language } from "../types";
 import { getTranslation } from "../i18n/translations";
 
@@ -79,9 +80,11 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => scrollToSection("home")}
           className="flex items-center gap-3 group text-left cursor-pointer"
         >
-          <img
+          <Image
             src="/assets/images/logo.png"
             alt="Ali Ghelej Beigi Logo"
+            width={40}
+            height={40}
             className="w-10 h-10 object-contain transition-transform group-hover:scale-105"
             onError={(e) => {
               (e.target as HTMLImageElement).style.display = "none";

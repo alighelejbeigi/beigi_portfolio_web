@@ -1,26 +1,24 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import { Github, Layers } from "lucide-react";
 import Link from "next/link"; // Importe Link makhsoose Next.js ezafe shod
-import { Language, Project } from "../types";
+import { Language } from "../types";
 import { getTranslation } from "../i18n/translations";
 import { projects } from "../data/portfolioData";
 
 interface PortfolioProps {
   language: Language;
   darkMode: boolean;
-  // onSelectProject ro optional (?) kardam chon dige be jaye Modal, mirim be page jadid
-  onSelectProject?: (p: Project) => void;
 }
+
+type ProjectFilter = "all" | "app" | "package" | "dart";
 
 export const Portfolio: React.FC<PortfolioProps> = ({
   language,
   darkMode,
-  onSelectProject,
 }) => {
-  const [filter, setFilter] = useState<"all" | "app" | "package" | "dart">(
-    "all",
-  );
+  const [filter, setFilter] = useState<ProjectFilter>("all");
 
   const t = (key: string) => getTranslation(language, key);
 
@@ -29,7 +27,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({
     return project.category === filter;
   });
 
-  const filterTabs = [
+  const filterTabs: { id: ProjectFilter; labelKey: string }[] = [
     { id: "all", labelKey: "project.all" },
     { id: "app", labelKey: "project.apps" },
     { id: "package", labelKey: "project.packages" },
@@ -62,7 +60,8 @@ export const Portfolio: React.FC<PortfolioProps> = ({
           {filterTabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setFilter(tab.id as any)}
+              onClick={() => setFilter(tab.id)}
+              aria-pressed={filter === tab.id}
               className={`px-5 py-2.5 rounded-xl font-semibold text-sm transition-all cursor-pointer ${
                 filter === tab.id
                   ? "bg-[#20b2aa] text-white shadow-lg shadow-[#20b2aa]/25"
@@ -95,9 +94,11 @@ export const Portfolio: React.FC<PortfolioProps> = ({
                 }`}
                 title={`${t(project.titleKey)} Project by Ali Qelichbeigi`} // Title attribute baraye SEO
               >
-                <img
+                <Image
                   src={project.appPhotos}
                   alt={t(project.titleKey)}
+                  width={640}
+                  height={480}
                   className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src =
@@ -140,9 +141,11 @@ export const Portfolio: React.FC<PortfolioProps> = ({
                         title={tech.name}
                         className="w-6 h-6 p-0.5 rounded bg-slate-800/20 flex items-center justify-center"
                       >
-                        <img
+                        <Image
                           src={tech.logo}
                           alt={tech.name}
+                          width={24}
+                          height={24}
                           className="w-full h-full object-contain"
                           onError={(e) => {
                             (e.target as HTMLImageElement).style.display =

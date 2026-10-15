@@ -1,16 +1,14 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
+import { siteUrl } from "./site-config";
 
-export const dynamic = "force-static"; // <--- IN KHAT RO EZAFE KON
+export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://alighelejbeigi.ir'; 
-  
   return {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/private/',
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
-  }
+    sitemap: `${siteUrl}/sitemap.xml`,
+  };
 }

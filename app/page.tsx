@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Language, Project } from "./types";
+import { Language } from "./types";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -8,13 +8,11 @@ import { Services } from "./components/Services";
 import { Portfolio } from "./components/Portfolio";
 import { Stats } from "./components/Stats";
 import { Footer } from "./components/Footer";
-import { ProjectModal } from "./components/ProjectModal";
 import { ContactModal } from "./components/ContactModal";
 
 export function App() {
   const [language, setLanguage] = useState<Language>("en");
   const [darkMode, setDarkMode] = useState<boolean>(true);
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [contactModalOpen, setContactModalOpen] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>("home");
 
@@ -85,7 +83,6 @@ export function App() {
       <Portfolio
         language={language}
         darkMode={darkMode}
-        onSelectProject={(proj) => setSelectedProject(proj)}
       />
 
       {/* Stats Counter Section */}
@@ -95,13 +92,6 @@ export function App() {
       <Footer language={language} darkMode={darkMode} />
 
       {/* Modals */}
-      <ProjectModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-        language={language}
-        darkMode={darkMode}
-      />
-
       <ContactModal
         isOpen={contactModalOpen}
         onClose={() => setContactModalOpen(false)}

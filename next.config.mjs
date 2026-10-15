@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   allowedDevOrigins: ["192.168.1.119"],
-  output: 'export',
+  output: "export",
+  trailingSlash: true,
   images: {
-    unoptimized: true, 
-  }
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;

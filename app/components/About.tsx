@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Code, GraduationCap, Cpu } from 'lucide-react';
 import { Language } from '../types';
 import { getTranslation } from '../i18n/translations';
@@ -91,9 +92,11 @@ export const About: React.FC<AboutProps> = ({ language, darkMode }) => {
                 }`}
               >
                 <div className="w-10 h-10 p-1.5 rounded-lg bg-slate-100/10 flex items-center justify-center shrink-0">
-                  <img
+                  <Image
                     src={tech.logo}
                     alt={tech.name}
+                    width={40}
+                    height={40}
                     className="w-full h-full object-contain group-hover:scale-110 transition-transform"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';

@@ -1,25 +1,22 @@
-import { MetadataRoute } from 'next'
-import { projects } from '../app/data/portfolioData'
+import type { MetadataRoute } from "next";
+import { projects } from "./data/portfolioData";
+import { siteUrl } from "./site-config";
 
-export const dynamic = "force-static"; // <--- IN KHAT RO EZAFE KON
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://alighelejbeigi.ir'; 
-
   const projectUrls = projects.map((project) => ({
-    url: `${baseUrl}/projects/${project.id}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
+    url: `${siteUrl}/projects/${project.id}/`,
+    changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
 
   return [
     {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
+      url: `${siteUrl}/`,
+      changeFrequency: "weekly",
       priority: 1,
     },
     ...projectUrls,
-  ]
+  ];
 }

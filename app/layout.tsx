@@ -1,22 +1,24 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { siteUrl } from "./site-config";
 
-// Viewport baraye Mobile SEO kheyli moheme
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: "#20b2aa",
 };
 
-// SEO Metadata asli
 export const metadata: Metadata = {
-  metadataBase: new URL("https://alighelejbeigi.ir"),
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Ali Ghelej Beigi | Mobile & Web Developer",
-    template: "%s | Ali Ghelej Beigi", // in tuye page haye dige estefade mishe
+    template: "%s | Ali Ghelej Beigi",
   },
   description:
-    "I'm Ali Ghelej Beigi, A Flutter and Web Developer from Shiraz, Iran. View my portfolio, projects, and skills in mobile app and web development.",
+    "Ali Ghelej Beigi is a Flutter and web developer in Shiraz, Iran. Explore his mobile apps, web projects, skills, and open-source work.",
   keywords: [
     "Ali Ghelej Beigi",
     "علی قلیچ بیگی",
@@ -36,18 +38,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     alternateLocale: "fa_IR",
-    url: "https://alighelejbeigi.github.io", // Inja domain khodet ro bezar
-    title: "Ali Ghelej Beigi | Portfolio",
-    description: "Mobile and Web Application Developer Portfolio",
+    url: siteUrl,
+    title: "Ali Ghelej Beigi | Mobile & Web Developer",
+    description:
+      "Explore Ali Ghelej Beigi's Flutter, mobile app, and web development projects.",
     siteName: "Ali Ghelej Beigi",
     images: [
       {
-        url: "/assets/images/logo.png", // Aks baraye shabake haye ejtemaei
-        width: 800,
-        height: 600,
-        alt: "Ali Ghelej Beigi Logo",
+        url: "/assets/images/person.png",
+        alt: "Ali Ghelej Beigi, mobile and web developer",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ali Ghelej Beigi | Mobile & Web Developer",
+    description:
+      "Explore Ali Ghelej Beigi's Flutter, mobile app, and web development projects.",
+    images: ["/assets/images/person.png"],
   },
   robots: {
     index: true,

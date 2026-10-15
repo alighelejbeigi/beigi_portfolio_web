@@ -1,5 +1,6 @@
 import React from 'react';
-import { X, ExternalLink, Github, Cpu, Layers } from 'lucide-react';
+import Image from 'next/image';
+import { X, Github, Cpu, Layers } from 'lucide-react';
 import { Language, Project } from '../types';
 import { getTranslation } from '../i18n/translations';
 
@@ -53,9 +54,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             darkMode ? 'bg-slate-950/80 border border-slate-800' : 'bg-slate-100 border border-slate-200'
           }`}
         >
-          <img
+          <Image
             src={project.appPhotos}
             alt={t(project.titleKey)}
+            width={800}
+            height={600}
             className="max-h-72 object-contain rounded"
             onError={(e) => {
               (e.target as HTMLImageElement).src = '/assets/images/projects/comingSoon.jpg';
@@ -87,7 +90,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                     : 'bg-slate-100 border-slate-200 text-slate-700'
                 }`}
               >
-                <img src={tech.logo} alt={tech.name} className="w-4 h-4 object-contain" />
+                <Image
+                  src={tech.logo}
+                  alt={tech.name}
+                  width={16}
+                  height={16}
+                  className="w-4 h-4 object-contain"
+                />
                 <span>{tech.name}</span>
               </div>
             ))}

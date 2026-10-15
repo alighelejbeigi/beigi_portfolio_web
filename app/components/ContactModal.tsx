@@ -17,14 +17,14 @@ export const ContactModal: React.FC<ContactModalProps> = ({
   language,
   darkMode,
 }) => {
-  if (!isOpen) return null;
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const t = (key: string) => getTranslation(language, key);
+
+  if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,6 +54,9 @@ export const ContactModal: React.FC<ContactModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm transition-opacity">
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contact-modal-title"
         className={`relative w-full max-w-lg rounded-2xl border shadow-2xl p-6 sm:p-8 ${
           darkMode
             ? "bg-[#07111a] border-slate-800 text-slate-100"
@@ -62,6 +65,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
       >
         <button
           onClick={onClose}
+          aria-label={t("contact_modal.close")}
           className={`absolute top-4 right-4 rtl:right-auto rtl:left-4 p-2 rounded-full transition-colors ${
             darkMode
               ? "hover:bg-slate-800 text-slate-400"
@@ -75,7 +79,9 @@ export const ContactModal: React.FC<ContactModalProps> = ({
           <div className="p-2.5 bg-[#20b2aa]/10 text-[#20b2aa] rounded-xl">
             <Mail className="w-5 h-5" />
           </div>
-          <h3 className="text-2xl font-bold">{t("contact_modal.title")}</h3>
+          <h3 id="contact-modal-title" className="text-2xl font-bold">
+            {t("contact_modal.title")}
+          </h3>
         </div>
         <p className="text-xs text-slate-400 mb-6">
           {t("contact_modal.subtitle")}
@@ -95,10 +101,11 @@ export const ContactModal: React.FC<ContactModalProps> = ({
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs font-bold uppercase text-slate-400 mb-1">
+              <label htmlFor="contact-name" className="block text-xs font-bold uppercase text-slate-400 mb-1">
                 {t("contact_modal.name")}
               </label>
               <input
+                id="contact-name"
                 type="text"
                 required
                 value={name}
@@ -113,10 +120,11 @@ export const ContactModal: React.FC<ContactModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-xs font-bold uppercase text-slate-400 mb-1">
+              <label htmlFor="contact-email" className="block text-xs font-bold uppercase text-slate-400 mb-1">
                 {t("contact_modal.email")}
               </label>
               <input
+                id="contact-email"
                 type="email"
                 required
                 value={email}
@@ -131,10 +139,11 @@ export const ContactModal: React.FC<ContactModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-xs font-bold uppercase text-slate-400 mb-1">
+              <label htmlFor="contact-message" className="block text-xs font-bold uppercase text-slate-400 mb-1">
                 {t("contact_modal.message")}
               </label>
               <textarea
+                id="contact-message"
                 required
                 rows={4}
                 value={message}

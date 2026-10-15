@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { MapPin, MessageCircle, ArrowRight } from 'lucide-react';
 import { Language } from '../types';
 import { getTranslation } from '../i18n/translations';
@@ -82,9 +83,11 @@ export const Hero: React.FC<HeroProps> = ({ language, darkMode, onOpenContact })
                       : 'bg-white hover:bg-slate-100 shadow-sm border border-slate-200'
                   }`}
                 >
-                  <img
+                  <Image
                     src={darkMode ? social.iconLight : social.iconDark}
                     alt={social.name}
+                    width={20}
+                    height={20}
                     className="w-5 h-5 object-contain"
                     onError={(e) => {
                       // Fallback text if image missing
@@ -108,13 +111,15 @@ export const Hero: React.FC<HeroProps> = ({ language, darkMode, onOpenContact })
               />
 
               <div className="relative z-10 p-6 w-full h-full flex items-center justify-center">
-                <img
+                <Image
                   src="/assets/svg/guy.svg"
                   alt="Developer Illustration"
+                  fill
+                  loading="eager"
+                  sizes="(max-width: 768px) 100vw, 320px"
                   className="w-full h-full max-h-80 object-contain drop-shadow-xl"
                   onError={(e) => {
-                    // Fallback to person.svg or placeholder icon
-                    (e.target as HTMLImageElement).src = './assets/svg/person.svg';
+                    (e.target as HTMLImageElement).src = '/assets/svg/person.svg';
                   }}
                 />
               </div>

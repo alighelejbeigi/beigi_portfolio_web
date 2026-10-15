@@ -1,5 +1,4 @@
 import React from 'react';
-import { Award, Code, CheckCircle2 } from 'lucide-react';
 import { Language } from '../types';
 import { getTranslation } from '../i18n/translations';
 import { statsData } from '../data/portfolioData';

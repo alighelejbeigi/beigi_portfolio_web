@@ -1,5 +1,6 @@
 import React from 'react';
-import { MapPin, Phone, Mail, MessageSquare, Heart } from 'lucide-react';
+import Image from 'next/image';
+import { MapPin, Phone, Mail, MessageSquare } from 'lucide-react';
 import { Language } from '../types';
 import { getTranslation } from '../i18n/translations';
 import { socialLinks } from '../data/portfolioData';
@@ -136,9 +137,11 @@ export const Footer: React.FC<FooterProps> = ({ language, darkMode }) => {
                     : 'bg-white hover:bg-slate-100 border border-slate-200 shadow-sm'
                 }`}
               >
-                <img
+                <Image
                   src={darkMode ? social.iconLight : social.iconDark}
                   alt={social.name}
+                  width={20}
+                  height={20}
                   className="w-5 h-5 object-contain"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
